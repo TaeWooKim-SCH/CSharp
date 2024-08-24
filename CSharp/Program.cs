@@ -31,6 +31,25 @@
              Console.WriteLine(message);
             Console.WriteLine("hp" + hp);
             Console.WriteLine("max hp" + maxHp);
+
+            // 산술 연산
+            int value = 5;
+            hp -= value;
+            Console.WriteLine(hp);
+
+            // < <= > >= == !=
+
+            // 조건문
+            bool isDead = (hp <= 0);
+
+            if (isDead)
+            {
+                Console.WriteLine("You are dead!");
+            }
+            else
+            {
+                Console.WriteLine("You are alive");
+            }
         }
     }
 }
