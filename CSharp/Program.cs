@@ -10,6 +10,13 @@
         
         // 덧셈 함수
         static int Add(int a, int b) {
+            Console.WriteLine("int 호출!!");
+            return a + b;
+        }
+
+        // 메소드 오버로딩 -> 함수 이름의 재사용 -> 매개변수 타입 또는 개수가 변경되어야 함
+        static float Add(float a, float b) {
+            Console.WriteLine("float 호출!!");
             return a + b;
         }
 
@@ -127,7 +134,10 @@
             Program.AddOne(ref a);
             Console.WriteLine(a);
 
-
+            int ret1 = Program.Add(2, 3);
+            Console.WriteLine(ret1);
+            float ret2 = Program.Add(2.2f, 3.2f);
+            Console.WriteLine(ret2);
         }
     }
 }
