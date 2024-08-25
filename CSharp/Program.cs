@@ -2,11 +2,22 @@
 {
     internal class Program
     {
-        enum Choice {
-            Scissors = 0,
-            Rock = 1,
-            Paper = 2
+        // Method 함수
+        // 한정자 반환형식 이름(매개변수목록) { }
+        static void HelloWord() {
+            Console.WriteLine("Hello World");
         }
+        
+        // 덧셈 함수
+        static int Add(int a, int b) {
+            return a + b;
+        }
+
+        // 참조형 매개변수 함수 -> AddOne(ref 매개변수)
+        static void AddOne(ref int number) {
+            number += 1;
+        }
+
         static void Main(string[] args)
         {
             // 자료형
@@ -97,17 +108,26 @@
             //    Console.WriteLine("패배입니다.");
             //}
 
-            // while
-            int count = 0;
-            while (count < 5) {
-                Console.WriteLine("Hello World [while]");
-                count++;
-            }
+            //// while
+            //int count = 0;
+            //while (count < 5) {
+            //    Console.WriteLine("Hello World [while]");
+            //    count++;
+            //}
 
-            // for (초기화식;조건식;반복식)
-            for (int i = 0; i < 5; i++) {
-                Console.WriteLine("Hello World [for]");
-            }
+            //// for (초기화식;조건식;반복식)
+            //for (int i = 0; i < 5; i++) {
+            //    Console.WriteLine("Hello World [for]");
+            //}
+
+            int result = Program.Add(4, 5);
+            Console.WriteLine(result);
+
+            int a = 0;
+            Program.AddOne(ref a);
+            Console.WriteLine(a);
+
+
         }
     }
 }
