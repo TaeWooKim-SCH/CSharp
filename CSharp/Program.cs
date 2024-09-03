@@ -1,23 +1,25 @@
 ﻿namespace CSharp
 {
     // 객체 (OOP Object Oriented Programming)
+    // - 은닉성, 상속성, 다형성
+    class Player { // 부모 / 기반 클래스
+        // 필드
+        static public int counter = 1; // 오로지 1개만 존재!
+        public int id;
+        public int hp;
+        public int attack;
+    }
 
-    // Knight
-    // 속성: hp, attack, pos
-    // 기능: Move, Attack, Die
+    class Mage: Player { // 자식 / 파생
+
+    }
+
+    class Archer: Player {
+
+    }
 
     // Ref 참조
-    class Knight {
-        static public int counter; // 오로지 1개만 존재! -> 각 다른 객체들이 모두 공유해서 하나만 사용한다!
-
-        public int id;
-        public int hp; // public이 없으면 해당 클래스 내부에서만 사용한다는 의미
-        public int attack;
-
-        static public void Test() {
-            counter++;
-        }
-
+    class Knight: Player {
         static public Knight CreateKnight() {
             Knight knight = new Knight();
             knight.hp = 100;
@@ -25,7 +27,7 @@
             return knight;
         }
 
-        public Knight () {
+        public Knight() {
             id = counter;
             counter++;
 
