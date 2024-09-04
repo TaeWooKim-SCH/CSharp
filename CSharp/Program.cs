@@ -20,6 +20,7 @@
             Mage mage = player as Mage;
             if (mage != null) {
                 mage.mp = 10;
+                Console.WriteLine("mp 변경됨");
                 return;
             } else {
                 Console.WriteLine("끝");
@@ -30,7 +31,7 @@
             Knight knight = new Knight();
             Mage mage = new Mage();
 
-            EnterGame(knight);
+            EnterGame(mage);
         }
     }
 }
