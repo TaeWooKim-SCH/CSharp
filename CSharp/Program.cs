@@ -9,13 +9,11 @@
         public int hp;
         public int attack;
 
-        public Player() {
-            Console.WriteLine("Player 생성자 호출!");
+        public void Move() {
+            Console.WriteLine("Player Move");
         }
-
-        public Player(int hp) {
-            this.hp = hp;
-            Console.WriteLine("Player hp 생성자 호출!");
+        public void Attack() {
+            Console.WriteLine("Player Attack");
         }
     }
 
@@ -29,44 +27,16 @@
 
     // Ref 참조
     class Knight: Player {
-        int c;
+        public void Stun() {
 
-        public Knight(): base(100) {
-            Console.WriteLine("Knight 생성자 호출");
-        }
-
-        static public Knight CreateKnight() {
-            Knight knight = new Knight();
-            knight.hp = 100;
-            knight.attack = 1;
-            return knight;
-        }
-
-        public Knight Clone() {
-            Knight knight = new Knight();
-            knight.hp = hp;
-            knight.attack = attack;
-            return knight;
-        }
-
-        public void Move() {
-            Console.WriteLine("Knight Move");
-        }
-        public void Attack() {
-            Console.WriteLine("Knight Attack");
         }
     }
 
     internal class Program {
 
         static void Main(string[] args) {
-            Knight knight = Knight.CreateKnight(); // static
-            knight.Move(); // 일반
-
-            Console.WriteLine();
-
-            Random rand = new Random();
-            rand.Next(0, 2);
+            Knight knight = new Knight(); // static
+            knight.Move();
         }
     }
 }
