@@ -1,42 +1,31 @@
 ﻿namespace CSharp
 {
-    // 객체 (OOP Object Oriented Programming)
-    // - 은닉성, 상속성, 다형성
-    class Player { // 부모 / 기반 클래스
-        // 필드
-        static public int counter = 1; // 오로지 1개만 존재!
-        public int id;
-        public int hp;
-        public int attack;
+    // OOP(은닉성/상속성/다형성)
+    // 자동차
+    // 핸들 페달 차문
+        // 전기장치 엔진 기름 <-> 외부 노출
 
-        public void Move() {
-            Console.WriteLine("Player Move");
-        }
-        public void Attack() {
-            Console.WriteLine("Player Attack");
-        }
+    class Knight {
+        // 접근 한정자(default = private)
+        // public protected private
+        // public: 모두 접근 가능
+        // private: 해당 클래스 내에서만 접근 가능
+        // protected: 상속을 받은 클래스는 접근 가능
+        protected int hp;
+        
     }
 
-    class Mage: Player { // 자식 / 파생
-
-    }
-
-    class Archer: Player {
-
-    }
-
-    // Ref 참조
-    class Knight: Player {
-        public void Stun() {
-
+    class SuperKnight: Knight {
+        void Test() {
+            hp = 10;
         }
     }
-
+    
     internal class Program {
 
         static void Main(string[] args) {
-            Knight knight = new Knight(); // static
-            knight.Move();
+            Knight knight = new Knight();
+            // knight.hp = 10; -> 접근 불가
         }
     }
 }
