@@ -8,6 +8,15 @@
         public int id;
         public int hp;
         public int attack;
+
+        public Player() {
+            Console.WriteLine("Player 생성자 호출!");
+        }
+
+        public Player(int hp) {
+            this.hp = hp;
+            Console.WriteLine("Player hp 생성자 호출!");
+        }
     }
 
     class Mage: Player { // 자식 / 파생
@@ -20,20 +29,17 @@
 
     // Ref 참조
     class Knight: Player {
+        int c;
+
+        public Knight(): base(100) {
+            Console.WriteLine("Knight 생성자 호출");
+        }
+
         static public Knight CreateKnight() {
             Knight knight = new Knight();
             knight.hp = 100;
             knight.attack = 1;
             return knight;
-        }
-
-        public Knight() {
-            id = counter;
-            counter++;
-
-            hp = 100;
-            attack = 0;
-            Console.WriteLine("생성자 호출");
         }
 
         public Knight Clone() {
