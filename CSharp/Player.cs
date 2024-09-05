@@ -30,13 +30,13 @@ namespace CSharp {
     }
 
     class Archer: Player {
-        Archer() : base(PlayerType.Archer) {
+        public Archer() : base(PlayerType.Archer) {
             SetInfo(75, 10);
         }
     }
 
     class Mage: Player {
-        Mage() : base(PlayerType.Mage) {
+        public Mage() : base(PlayerType.Mage) {
             SetInfo(50, 15);
         }
     }
