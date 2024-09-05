@@ -14,7 +14,7 @@
     }
 
     class Knight: Player {
-        public override void Move() {
+        public sealed void Move() { // sealed: 나까지만 건드릴 수 있고 이후 자식들은 오버라이딩 불가능
             base.Move();
             Console.WriteLine("Knight 이동!");
         }
